@@ -1,0 +1,266 @@
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.409);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.modal .popup {
+  width: 1000px;
+  height: auto;
+  height: 600px;
+  border-radius: 20px;
+  background-color: #fff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  position: relative;
+  -webkit-transition: 0.4s eas;
+  -moz-transition: 0.4s eas;
+  -ms-transition: 0.4s eas;
+  -o-transition: 0.4s eas;
+}
+
+.modal .popup .close {
+  position: absolute;
+  right: -60px;
+  top: -10px;
+  z-index: 10px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -ms-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+}
+
+.modal .popup .photo {
+  width: 60%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .popup .photo img {
+  width: 400px;
+  transition: .2s ease-in;
+  -webkit-transition: .2s ease-in;
+  -moz-transition: .2s ease-in;
+  -ms-transition: .2s ease-in;
+  -o-transition: .2s ease-in;
+}
+
+.modal .popup .pizza_about {
+  width: 40%;
+  height: 100%;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 20px;
+}
+
+.modal .popup .pizza_about .add_card {
+  width: 100%;
+  height: 120px;
+  background-color: #fcfcfc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 40;
+}
+
+.modal .popup .pizza_about .add_card button {
+  width: 100%;
+  background-color: #e86100;
+  padding: 15px;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.modal .popup .pizza_about .add_card .btn-size {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border: none;
+  outline: none;
+  background-color: #e86100;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .popup .pizza_about .pizza_info {
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+  background-color: #fcfcfc;
+  border-radius: 0 20px 20px 0;
+  -webkit-border-radius: 0 20px 20px 0;
+  -moz-border-radius: 0 20px 20px 0;
+  -ms-border-radius: 0 20px 20px 0;
+  -o-border-radius: 0 20px 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal .popup .pizza_about .pizza_info p {
+  width: 90%;
+}
+
+.modal .popup .pizza_about .pizza_info .size {
+  width: 80%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  padding: 5px;
+  grid-gap: 10px;
+  background-color: #f3f3f7;
+  margin: 40px 0;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.modal .popup .pizza_about .pizza_info .size button {
+  padding: 6px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+}
+
+.modal .popup .pizza_about .pizza_info .add_product {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
+}
+
+.modal .popup .pizza_about .pizza_info .add_product .product {
+  width: 110px;
+  height: 170px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 10px 0;
+}
+
+.modal .popup .pizza_about .pizza_info .add_product .product h3 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555353;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.modal .popup .pizza_about .pizza_info .add_product .product img {
+  width: 80px;
+}
+/*# sourceMappingURL=modal.css.map */

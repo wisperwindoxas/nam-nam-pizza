@@ -96,6 +96,7 @@ export default function Modal({ isClose, setIsClose, href, hide, id }) {
           name: pizza.name,
           title: pizza.subtitle,
           price: pizza.price,
+          count:1
         }
       );
       setIsClose(false);

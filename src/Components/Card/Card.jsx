@@ -10,8 +10,9 @@ import HeadTop from '../Header/Top_logo/HeadTop';
 export default function Card() {
   const [cart, setCart] = React.useState([]);
   const [deletId, setDeletId] = React.useState('');
+  const [update, setUpdate] = React.useState('')
 
- const resultsum = cart.map((item) => parseInt(item.price));
+ const resultsum = cart.map((item) => parseInt(item.price)* item.count);
  const sum = resultsum.reduce((acc, cur) => acc + cur, 0);
 
   React.useEffect(() => {
@@ -24,7 +25,7 @@ export default function Card() {
     }
 
       getCart();
-  }, [deletId]);
+  }, [deletId, update,sum]);
   
 
   const deleteItem = async (id) => {
@@ -74,7 +75,7 @@ export default function Card() {
                     <h3>{item.name}</h3>
                     <p>{item.subtitle}</p>
                   </div>
-                  <Count />
+                  <Count id={item.id}  setUpdate={setUpdate} counts={item.count}/>
                   <div className="price">{item.price} сум</div>
 
                   <div className="trash">

@@ -11,10 +11,8 @@ export default function Slider({item}) {
   const getId = (id) => {
     setIsClose(!isClose)
     setId(id);
-  
-   
-
   }
+  
   return (
     <div className="slider">
       {isClose ? (
@@ -23,11 +21,11 @@ export default function Slider({item}) {
         ''
       )}
       <Carousel show={5} slide={1} transition={0.5} swiping={true}>
-        {item.map((item) => {
+        {item.map((item, index) => {
           return (
             <div
               key={item.name}
-              onClick={() => getId(item.id)}
+              onClick={() => getId(index)}
               className="slider_item"
             >
               <img src={item.imgPath} alt={item.name} />

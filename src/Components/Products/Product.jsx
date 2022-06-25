@@ -5,7 +5,7 @@ import './product.scss';
 
 
 
-export default function Product({ item, nameProduct, href, hide, scroll }) {
+export default function Product({ item, nameProduct, href, hide, scroll, setUpdate }) {
   const [isClose, setIsClose] = React.useState(false);
   const [id, setId] = React.useState();
 
@@ -51,6 +51,7 @@ export default function Product({ item, nameProduct, href, hide, scroll }) {
           setIsClose={setIsClose}
           isClose={isClose}
           id={id}
+          setUpdate={setUpdate}
         />
       ) : (
         ''

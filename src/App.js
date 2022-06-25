@@ -19,10 +19,8 @@ function App() {
   const [snackbar, setSnackbar] = React.useState([]);
   const [desert, setDesert] = React.useState([]);
   const [drink, setDrink] = React.useState([]);
+  const [update, setUpdate] = React.useState('')
 
-  React.useEffect(() => {
- 
-}, [])
 
   React.useEffect(() => {
     async function fetchData() {
@@ -55,18 +53,25 @@ function App() {
       
     }
 
+
+    
+
     fetchData();
   }, []);
+
+
+
 
   function Home() {
     return (
       <>
         <HeadTop />
-        <Menu />
+        <Menu update={update}  />
         <Slider item={pizza} />
-        <Product scroll="pizza" href="pizza" nameProduct="Пицца" item={pizza} />
-        <Product scroll="combo" href="combo" nameProduct="Комбо" item={combo} />
+        <Product setUpdate={setUpdate} scroll="pizza" href="pizza" nameProduct="Пицца" item={pizza} />
+        <Product setUpdate={setUpdate} scroll="combo" href="combo" nameProduct="Комбо" item={combo} />
         <Product
+        setUpdate={setUpdate}
           scroll="snacks"
           hide="none"
           href="snacks"
@@ -74,6 +79,7 @@ function App() {
           item={snackbar}
         />
         <Product
+        setUpdate={setUpdate}
           scroll="desert"
           hide="none"
           href="desert"
@@ -81,6 +87,7 @@ function App() {
           item={desert}
         />
         <Product
+        setUpdate={setUpdate}
           scroll="drink"
           hide="none"
           href="drink"

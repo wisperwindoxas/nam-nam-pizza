@@ -46,12 +46,13 @@ const pizza_product = [
     price: '4 000',
   },
 ];
-export default function Modal({ isClose, setIsClose, href, hide, id }) {
+export default function Modal({ isClose, setIsClose, href, hide, id, setUpdate}) {
   const [checked, setChecked] = React.useState(false);
   const [selectSize, setSelelctSize] = React.useState('medium');
   const [sizePizza, setSizePizza] = React.useState(1);
   const [pizza, setPizza] = React.useState([]);
   const [cart, setCart]  = React.useState([]);
+  const [isAddCart, setIsAddCart] = React.useState("") 
 
   React.useEffect(() => {
     const Product = ref(database, `${href}/${id}`);
@@ -86,8 +87,9 @@ export default function Modal({ isClose, setIsClose, href, hide, id }) {
   async function fetchDataPost() {
     
     if(cart.find(item => item.name === pizza.name)){
-          return alert('Product alerdy add in cart')
+      setIsAddCart("Вы уже добавиль в корзину")
     }else{
+     
       await axios.post(
         `https://62b04087b0a980a2ef4e882c.mockapi.io/cart`,
         {
@@ -99,8 +101,12 @@ export default function Modal({ isClose, setIsClose, href, hide, id }) {
           count:1
         }
       );
+     
       setIsClose(false);
+      setUpdate(pizza.id)
+     
     }
+    
   }
 
   return (
@@ -191,7 +197,8 @@ export default function Modal({ isClose, setIsClose, href, hide, id }) {
           </div>
           <div className="add_card">
             <button onClick={() => fetchDataPost()}>
-              Добавить в корзина за {pizza.price} сум
+              {isAddCart ? isAddCart : ` Добавить в корзина за ${pizza.price} сум`}
+             
             </button>
           </div>
         </div>

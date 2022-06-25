@@ -22,12 +22,14 @@ export default function Card() {
       );
 
       setCart(cartData.data)
+      
     }
 
       getCart();
+      
   }, [deletId, update,sum]);
-  
 
+  
   const deleteItem = async (id) => {
     
     await axios.delete(`https://62b04087b0a980a2ef4e882c.mockapi.io/cart/${id}`);

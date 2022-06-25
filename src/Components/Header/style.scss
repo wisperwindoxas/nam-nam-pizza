@@ -99,12 +99,15 @@ $colorButton:#e86100;
 	}
 
 	.card{
+	
 		font-size: 20px;
 		font-weight: bold;
-		padding: 7px 10px;
+		padding: 5px 10px;
 		border-radius: 100px;
 		border:none;
 		outline:none;
+		display: flex;
+		justify-content: space-between;
 		background-color:$colorButton;
 		color:#fff;
 		-webkit-border-radius: 100px;
@@ -112,6 +115,15 @@ $colorButton:#e86100;
 		-ms-border-radius: 100px;
 		-o-border-radius: 100px;
 		cursor:pointer;
+		a{
+			text-decoration: none;
+		}
+		span{
+			
+			padding: 0 10px  0;
+			font-weight: 400;
+		}
+		
 	}
 
 	.card:hover{

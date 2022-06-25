@@ -2,18 +2,34 @@ import React from 'react'
 import '../style.scss'
 import {Link as Links} from 'react-router-dom'
 import {Link} from 'react-scroll'
+import axios from 'axios';
 
 
 
 
 
 
-
-export default function Menu() {
+export default function Menu({update}) {
    
   const [scroll, setScroll] = React.useState(false)
+  const [cart, setCart] =React.useState([])
+  
+  React.useEffect(() => {
+    async function fetchData(){
+      const cartData = await axios.get(
+        `https://62b04087b0a980a2ef4e882c.mockapi.io/cart`
+      );
+
+      setCart(cartData.data)
+    }
+
+    fetchData()
+}, [update])
+
 
   React.useEffect(() => {
+
+
     function handleScroll (){
       if(window.scrollY > 70){
         setScroll(true)
@@ -24,6 +40,9 @@ export default function Menu() {
     }
     window.addEventListener('scroll', handleScroll);
   }, [scroll])
+
+
+
 
   return (
     <div
@@ -60,7 +79,7 @@ export default function Menu() {
 
       <div className="card">
         <Links to={'/card'}>
-          <button className="card">Корзина</button>
+          <button className="card"><p>Корзина</p> <span className='cartCount'>{cart.length}</span></button>
         </Links>
       </div>
     </div>
